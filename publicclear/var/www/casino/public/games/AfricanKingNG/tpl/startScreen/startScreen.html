@@ -1,0 +1,200 @@
+﻿
+
+<style type="text/css">
+
+    @-webkit-keyframes div {
+        0% {
+            left: -32px;
+            top: 20px;
+        }
+        50% {
+            left: -32px;
+            top: 0px;
+        }
+    }
+
+    @keyframes div {
+        0% {
+            left: 0px;
+            top: 20px;
+        }
+        50% {
+            left: 0px;
+            top: 0px;
+        }
+    }
+
+    @-webkit-keyframes circle {
+        0% {
+            opacity: 0.0;
+        }
+        49% {
+            opacity: 0.0;
+        }
+        50% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes circle {
+        0% {
+            opacity: 0.0;
+        }
+        49% {
+            opacity: 0.0;
+        }
+        50% {
+            opacity: 1.0;
+        }
+    }
+
+    @-webkit-keyframes circle2 {
+        0% {
+            opacity: 0.0;
+        }
+        59% {
+            opacity: 0.0;
+        }
+        60% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes circle2 {
+        0% {
+            opacity: 0.0;
+        }
+        59% {
+            opacity: 0.0;
+        }
+        60% {
+            opacity: 1.0;
+        }
+    }
+
+    @-webkit-keyframes circle3 {
+        0% {
+            opacity: 0.0;
+        }
+        59% {
+            opacity: 0.0;
+        }
+        60% {
+            opacity: 1.0;
+        }
+    }
+
+    @keyframes circle3 {
+        0% {
+            opacity: 0.0;
+        }
+        69% {
+            opacity: 0.0;
+        }
+        70% {
+            opacity: 1.0;
+        }
+    }
+
+    #startScreenLayer
+    {
+        display: block;
+        position:fixed;
+        background: rgba(0, 0, 0, 0.75);
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        visibility: visible;
+        touch-action: none;
+        z-index: 21;
+    }
+
+    #startScreen
+    {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+    }
+
+    h3
+    {
+        text-align: center;
+        color: white;
+    }
+
+    .warningText {
+        position: relative;
+        font-size: 4vw;
+        font-display: swap;
+        font-family: futuraptheavy;
+    }
+
+    .fullscreenAnimatedHand{
+        margin-left: 54%;
+        text-align: center;
+        width: 25vw;
+        height: auto;
+    }
+
+    .animation_circle3
+    {
+        margin-left: 50%;
+        margin-bottom: 5%;
+    }
+
+    .div {
+        margin-left: 48%;
+        margin-bottom: 10%;
+        position: relative;
+    }
+
+    .hand {
+        position: relative;
+        -webkit-animation: div 1.5s infinite;
+        animation: div 1.5s infinite;
+    }
+
+    .circle {
+        position: absolute;
+        top: -10px;
+        left: -3px;
+        -webkit-animation: circle 1.5s infinite;
+        animation: circle 1.5s infinite;
+    }
+
+    .circle2 {
+        position: absolute;
+        top: -20px;
+        left: -12px;
+        -webkit-animation: circle2 1.5s infinite;
+        animation: circle2 1.5s infinite;
+    }
+
+    .circle3 {
+        position: absolute;
+        top: -35px;
+        left: -26px;
+        -webkit-animation: circle3 1.5s infinite;
+        animation: circle3 1.5s infinite;
+    }
+
+</style>
+
+<div id="startScreenLayer">
+    <div id="startScreen">
+        <div>
+            <div class="div">
+                <img id="circle" src="../../img/high_res/fullscreenWarning/circle1.png" class="circle autoFix">
+                <img id="circle" src="../../img/high_res/fullscreenWarning/circle2.png" class="circle2 autoFix">
+                <img id="circle" src="../../img/high_res/fullscreenWarning/circle3.png" class="circle3 autoFix">
+                <img id="hand" src="../../img/high_res/fullscreenWarning/hand.png" class="hand autoFix">
+            </div>
+            <div class="warningText">
+                <h3>
+                    {{TouchToStart}}
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+﻿<style type="text/css">
+    h3 {
+        text-align: center;
+        color: white;
+    }
+
+    .rotateAndWait {
+        height: auto;
+        animation-delay: 0.5s;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: rotateAndWait;
+    }
+
+    .showCheck {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        z-index: 23;
+        top: 50px;
+        animation-delay: 0.5s;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: showCheck;
+    }
+
+
+    @keyframes rotateAndWait {
+        from {
+            transform: rotate(0deg);
+        }
+        75% {
+            transform: rotate(-90deg);
+        }
+        to {
+            transform: rotate(-90deg);
+        }
+    }
+
+    @keyframes showCheck {
+        from {
+            opacity: 0;
+        }
+        75% {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    #posWarningLayer {
+        display: none;
+        margin: 0;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.75);
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        visibility: visible;
+        touch-action: none;
+        z-index: 22;
+    }
+
+    .warningLayer {
+        margin: 0;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .animaitedImg {
+        text-align: center;
+    }
+
+    .bottomImgDiv {
+        text-align: center;
+    }
+
+    .posWarningText {
+        margin-top: 45%;
+        margin-bottom: 40%;
+        font-size: 4vw;
+        font-display: swap;
+        font-family: futuraptheavy;
+    }
+</style>
+
+<div id="posWarningLayer">
+    <div class="warningLayer">
+        <div class="animaitedImg">
+            <img class="showCheck autoFix" src="../../img/high_res/posWarning/check.png" />
+            <img class="rotateAndWait autoFix" src="../../img/high_res/posWarning/mobile1.png" />
+        </div>
+        <div class="posWarningText">
+            <h3>
+                {{PleaseTurnYourDeviceToLandscapeMode}}
+            </h3>
+        </div>
+        <div class="bottomImgDiv">
+            <img style="height: auto;" class="autoFix" src="../../img/high_res/posWarning/mobile2.png" />
+        </div>
+    </div>
+</div>

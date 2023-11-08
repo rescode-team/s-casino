@@ -1,0 +1,286 @@
+* {
+    outline: none;
+    padding: 0; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*Only iOS (safari-based) devices*/
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        min-height: 170px;
+        background: #000;
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+/*Other devices*/
+@supports not (-webkit-overflow-scrolling: touch) {
+    body {
+        min-height: 170px;
+        background: #000;
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        margin: 0;
+    }
+}
+
+/*#error-message, #progress-bar, canvas {
+        display: none;
+}*/
+
+/*canvas {
+        width: 100% !important;
+        height: auto !important;
+        display: none;
+}*/
+
+.loader-message {
+    color: aliceblue;
+    font-size: calc(.5em + 2vh);
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    position: fixed;
+	bottom: 20%;
+	left: 0;
+	right: 0;
+	height: 0;
+    text-align: center;
+    display: none;
+}
+
+#error-message {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: none;
+    z-index: 25;
+}
+
+.error-container {
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    display: flex;
+}
+
+#error-message .error-mess-in {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    text-align: center;
+    height: 100vh;
+    color: #90a4ae;
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+#error-message .error-mess-in img {
+    margin-left: 2vw;
+    max-width: 40vw;
+    max-height: 40vh;;
+    width: calc(1em + 25vh);;
+
+}
+
+#error-message .error-mess-in h2 {
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: calc(1em + 5vh);
+    margin: 1vh;
+    color: #d32f2f;
+}
+
+#error-message .error-mess-in a {
+    color: #0288d1;
+}
+
+#error-message .message {
+    font-size: calc(.5em + 2vh);
+    margin-top: 1vh;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#error-message .text {
+    font-size: calc(.5em + 1vh);
+    margin: 1vh;
+    font-display: swap;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#error-message .reload-button {
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    padding: 1.5vh 2vh;
+    font-size: calc(.8em + 1vh);
+    background: black;
+    border: #B2B2B2 .1em solid;
+    color: #B2B2B2;
+    border-radius: 0.3em;
+    margin: 2vh;
+}
+
+#error-message .reload-button:hover {
+    border: white .1em solid;
+    color: white;
+}
+
+#error-message .reload-button:active {
+    border: #d32f2f .1em solid;
+    color: #d32f2f;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    max-height: 100vh;
+    overflow: hidden;
+    /* z-index: 1; */
+}
+
+.wrapper::after {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center top;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.progress img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.progress svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 140px !important;
+}
+
+.blur-img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.progress img {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.progress svg {
+    -webkit-filter: blur(0.8px);
+    -moz-filter: blur(0.8px);
+    filter: blur(0.8px);
+}
+
+.progressbar-text {
+    font-size: 22px !important;
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.progress-text {
+    position: absolute;
+    width: 300px;
+    top: 62%;
+    left: 50%;
+    z-index: 10;
+    margin: 0px 0px 0px -150px;
+    text-align: center;
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: #fff;
+}
+
+@media screen and (max-width: 1500px) {
+    .progress-text {
+        top: 66%;
+    }
+     .logos {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .progress-text {
+        top: 67%
+    }
+     .logos {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .progress-text {
+        top: 72%
+    }
+     .logos {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .progress svg {
+        top: 46%;
+    }
+
+    .progressbar-text {
+        top: 46% !important;
+    }
+
+    .progress-text {
+        top: 74%
+    }
+     .logos {
+       top: 46% !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .progress-text {
+        top: 84%
+    }
+}
